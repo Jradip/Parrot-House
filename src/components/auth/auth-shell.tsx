@@ -1,0 +1,8 @@
+import Image from "next/image";
+import Link from "next/link";
+import type { ReactNode } from "react";
+import { Brand } from "@/components/layout/brand";
+
+export function AuthShell({ eyebrow, title, description, children, footer }: { eyebrow: string; title: string; description: string; children: ReactNode; footer: ReactNode }) {
+  return <main className="grid min-h-[100svh] lg:grid-cols-[0.9fr_1.1fr]"><section className="flex flex-col bg-soft-background px-4 py-5 sm:px-8 sm:py-7 lg:px-14"><Brand /><div className="mx-auto my-auto w-full max-w-md py-10 sm:py-12"><p className="section-kicker">{eyebrow}</p><h1 className="mt-4 text-balance font-serif text-[2.65rem] font-medium leading-[1.05] tracking-tight sm:text-5xl">{title}</h1><p className="mt-4 leading-7 text-muted-text">{description}</p>{children}<div className="mt-7 text-sm leading-7 text-muted-text">{footer}</div></div></section><aside className="relative hidden min-h-screen overflow-hidden bg-deep-forest text-off-white lg:flex lg:flex-col lg:justify-end"><Image src="/images/lovebird.png" alt="Lovebird bertengger di ruang yang hangat" fill loading="eager" sizes="55vw" className="object-cover object-center" /><div className="absolute inset-0 bg-gradient-to-t from-forest-strong/85 via-forest-strong/5 to-transparent" /><div className="relative p-12 xl:p-16"><p className="text-xs font-bold uppercase tracking-[0.18em] text-soft-green">Parrot House</p><p className="mt-3 max-w-md font-serif text-4xl font-medium leading-tight">Kenali lebih dekat sebelum memilih.</p><Link href="/birds" className="mt-6 inline-flex min-h-11 items-center border-b border-soft-green text-sm font-bold text-off-white transition hover:text-soft-green">Lihat koleksi →</Link></div></aside></main>;
+}

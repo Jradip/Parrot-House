@@ -1,0 +1,2 @@
+import type { ReactNode } from "react";
+export function AdminHeading({title,description,action}:{title:string;description:string;action?:ReactNode}){return <div className="mb-7 flex flex-col gap-5 border-b border-line pb-5 sm:mb-8 sm:flex-row sm:items-end sm:justify-between sm:pb-6"><div><p className="section-kicker">Ruang admin</p><h1 className="mt-2 text-balance font-serif text-[2.35rem] font-medium leading-tight sm:text-5xl">{title}</h1><p className="mt-3 max-w-2xl text-sm leading-7 text-muted-text">{description}</p></div>{action}</div>}

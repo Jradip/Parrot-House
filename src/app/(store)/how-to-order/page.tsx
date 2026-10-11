@@ -1,0 +1,7 @@
+import type { Metadata } from "next";
+import { Container } from "@/components/ui/container";
+import { PageHero } from "@/components/ui/page-hero";
+
+export const metadata: Metadata = { title: "Cara Pesan" };
+const steps = [["01","Jelajahi","Cari dan pelajari informasi burung yang tersedia."],["02","Simpan","Masuk ke akun, lalu tambahkan pilihan ke keranjang."],["03","Lengkapi","Isi informasi penerima, alamat, dan pilih metode pengiriman yang tersedia."],["04","Tinjau","Periksa kembali burung, harga, pengiriman, dan total pesanan."],["05","Bayar","Pilih metode pembayaran yang tersedia dan selesaikan transaksi dengan aman."],["06","Pantau","Lihat status pembayaran, pesanan, dan pengiriman melalui akun Anda."]];
+export default function HowToOrderPage() { return <><PageHero eyebrow="Cara pemesanan" title="Dari mengenal hingga membawa pulang." description="Ikuti alurnya langkah demi langkah. Setiap keputusan dan status pesanan dapat Anda periksa kembali." /><Container className="py-14 lg:py-20"><ol className="grid gap-x-12 border-t border-line md:grid-cols-2">{steps.map(([number,title,text]) => <li key={number} className="grid grid-cols-[2.5rem_1fr] gap-5 border-b border-line py-7 sm:gap-7"><span className="pt-1 text-xs font-extrabold tracking-widest text-warm-gold">{number}</span><div><h2 className="font-serif text-2xl font-medium sm:text-3xl">{title}</h2><p className="mt-2 max-w-md text-sm leading-7 text-muted-text">{text}</p></div></li>)}</ol></Container></>; }
